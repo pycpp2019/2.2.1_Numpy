@@ -1,24 +1,34 @@
+from scipy import stats
 import numpy as np
 
 
 def t1_file_stat(filename):
-    # your solution
+    data = np.loadtxt(filename)
     return {
-        "mean": 0.0,
-        "max": 0,
-        "min": 0,
-        "std_dev": 0.0,
-        "5th_central_moment": 0.0,
+        "mean": np.mean(data),
+        "max": np.max(data),
+        "min": np.min(data),
+        "std_dev": np.std(data),
+        "5th_central_moment": stats.moment(data,moment = 5),
     }
 
 def t2_sort_int(array):
-    pass
+    return (np.sort(array))
 
 def t3_sort_complex(complex_array):
-    pass
+    data = {abs(i) : i for i in complex_array}
+    list_keys = list(data.keys())
+    list_keys.sort()
+    return (np.array([data[i] for i in list_keys]),np.sort_complex(complex_array))
 
 def t4_sort_string_len(string_array):
-    pass
+    data = {len(i) : i for i in string_array}
+    list_keys = list(data.keys())
+    list_keys.sort()
+    return (np.array([data[i] for i in list_keys]))
 
 def t5_sort_string(string_tuple):
-    pass
+    data = list(string_tuple)
+    data.sort()
+    return (data)
+
