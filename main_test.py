@@ -4,7 +4,7 @@ import numpy as np
 
 import main
 
-EPS = 1e-8
+EPS = 1e-6
 
 def test_t1_file_stat():
     print()

@@ -32,3 +32,8 @@ def t5_sort_string(string_tuple):
     data.sort()
     return (data)
 
+'''a= np.array([1,2,3,1])
+print(stats.moment(a,moment = 5))
+print(np.mean((a - a.mean())**5))'''
+
+
