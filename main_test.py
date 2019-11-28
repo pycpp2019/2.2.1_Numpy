@@ -78,11 +78,11 @@ def test_t3_sort_complex():
         assert len(ret) == 2
         assert ret[0].shape == (4*n**2,) and ret[1].shape == (4*n**2,)
 
-        assert np.max(np.abs(ret[0].real - ref[0].real)) < EPS
-        assert np.max(np.abs(np.sort(ret[0]) - ordsort)) < EPS
-
-        assert np.max(np.abs(np.abs(ret[1]) - np.abs(ref[1]))) < EPS
+        assert np.max(np.abs(ret[1].real - ref[1].real)) < EPS
         assert np.max(np.abs(np.sort(ret[1]) - ordsort)) < EPS
+
+        assert np.max(np.abs(np.abs(ret[0]) - np.abs(ref[0]))) < EPS
+        assert np.max(np.abs(np.sort(ret[0]) - ordsort)) < EPS
 
 def random_words(rng, k, n):
     charset = list("abcdefghijklmnopqrstuvwxyz")
