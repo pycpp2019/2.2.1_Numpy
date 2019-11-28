@@ -20,5 +20,5 @@ def t3_sort_complex(complex_array):
 def t4_sort_string_len(string_array):
     pass
 
-def t5_sort_string(string_tuple):
+def t5_sort_string_tuple(string_tuple):
     pass
