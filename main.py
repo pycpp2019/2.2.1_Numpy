@@ -1,7 +1,6 @@
 from scipy import stats
 import numpy as np
 
-
 def t1_file_stat(filename):
     data = np.loadtxt(filename)
     return {
@@ -17,26 +16,30 @@ def t2_sort_int(array):
 
 def t3_sort_complex(complex_array):
     if len(complex_array) == 0:
-        return (np.array([]))
+        return (np.array([]),np.array([]))
     data = [[abs(i), i] for i in complex_array]
     data.sort(key=lambda data: data[0])
-    return (np.array(data)[:,1],np.sort_complex(complex_array))
+    return (np.array(data)[:,1],np.flip(np.sort_complex(complex_array),axis = 0))
 
 def t4_sort_string_len(string_array):
-    data = {len(i) : i for i in string_array}
-    list_keys = list(data.keys())
-    list_keys.sort()
-    return (np.array([data[i] for i in list_keys]))
+    if len(string_array) == 0:
+        return(np.array([]))
+    data = [[len(i), i] for i in string_array]
+    data.sort(key=lambda data: data[0])
+    return (np.array(data)[:,1])
 
-def t5_sort_string(string_tuple):
+def t5_sort_string_tuple(string_tuple):
     data = list(string_tuple)
     data.sort()
-    return (data)
+    return tuple(data)
 
 '''a= np.array([1,2,3,1])
 print(stats.moment(a,moment = 5))
 print(np.mean((a - a.mean())**5))'''
-'''a = np.array([complex(-1,1),complex(-3,1),complex(-1,0)])
-a =np.array([])
-print (t3_sort_complex(a))'''
+a = np.array(["abc","abcdf","ac"])
+#a =np.array([])
+print (t4_sort_string_len(a))
+'''
+import sys
+print(sys.argv)'''
 
