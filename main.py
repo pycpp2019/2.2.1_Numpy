@@ -16,6 +16,8 @@ def t2_sort_int(array):
     return (np.sort(array))
 
 def t3_sort_complex(complex_array):
+    if len(complex_array) == 0:
+        return (np.array([]))
     data = [[abs(i), i] for i in complex_array]
     data.sort(key=lambda data: data[0])
     return (np.array(data)[:,1],np.sort_complex(complex_array))
@@ -35,5 +37,6 @@ def t5_sort_string(string_tuple):
 print(stats.moment(a,moment = 5))
 print(np.mean((a - a.mean())**5))'''
 '''a = np.array([complex(-1,1),complex(-3,1),complex(-1,0)])
+a =np.array([])
 print (t3_sort_complex(a))'''
 
