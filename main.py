@@ -26,4 +26,6 @@ def t4_sort_string_len(string_array):
     return string_array[np.argsort(np.array([len(el) for el in string_array]))]
 
 def t5_sort_string_tuple(string_tuple):
-    return string_tuple.sort()
+    tmp = list(string_tuple)
+    tmp.sort()
+    return tuple(tmp)
