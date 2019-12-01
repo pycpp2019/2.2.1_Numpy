@@ -3,9 +3,10 @@ from scipy import stats
 def t1_file_stat(filename):
 	values=np.genfromtxt(filename, delimiter="\n")
 	ans={'mean':0,'max':0,'min':0,'std_dev':0,'5th_central_moment':0}
-	ans['mean']=np.std(values)
+	ans['mean']=np.mean(values)
 	ans['max']=np.max(values)
 	ans['min']=np.min(values)
+	ans['std_dev']=np.std(values)
 	ans['5th_central_moment']=stats.moment(values,moment=5)
 	return ans
 def sortByLength(inputStr):
