@@ -28,9 +28,9 @@ def t2_sort_int(array):
 	return np.sort(array)
 
 def t3_sort_complex(complex_array):
-	sortList=list(complex_array)
-	newList=sorted(sortList, key=sortByNorm)
-	return (np.sort(array),np.array(newList))
+	sortList=[[abs(i), i] for i in complex_array]
+	newList=sorted(sortList, key=lambda sortList: sortList[0])
+	return (np.array(newList)[:,1],np.flip(np.sort_complex(complex_array),axis = 0))
 
 def t4_sort_string_len(string_array):
 	sortList=list(string_array)
