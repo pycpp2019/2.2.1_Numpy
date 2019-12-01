@@ -28,6 +28,8 @@ def t2_sort_int(array):
 	return np.sort(array)
 
 def t3_sort_complex(complex_array):
+	if len(complex_array) == 0:
+		return (np.array([]),np.array([]))
 	sortList=[[abs(i), i] for i in complex_array]
 	newList=sorted(sortList, key=lambda sortList: sortList[0])
 	return (np.array(newList)[:,1],np.flip(np.sort_complex(complex_array),axis = 0))
