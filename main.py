@@ -1,4 +1,5 @@
 import numpy as np
+from scipy import stats
 def t1_file_stat(filename):
 	values=np.genfromtxt(filename, delimiter="\n")
 	ans={'mean':0,'max':0,'min':0,'std_dev':0,'5th_central_moment':0}
