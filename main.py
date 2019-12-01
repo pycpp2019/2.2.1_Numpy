@@ -31,8 +31,8 @@ def t4_sort_string_len(string_array):
 	return np.array(newList)
 
 def t5_sort_string_tuple(string_tuple):
-	string_tuple1=np.array(string_tuple,dtype=string)
+	string_tuple1=np.array(string_tuple)
 	return tuple(np.sort(string_tuple1))
 
-#arr=np.array(['j','jfkkpppppp','abc'])
-#print(t4_sort_string_len(arr))
+#arr=('j','jfkkpppppp','abc')
+#print(t5_sort_string_tuple(arr))
