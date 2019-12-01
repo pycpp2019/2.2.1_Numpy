@@ -5,18 +5,7 @@ def t1_file_stat(filename):
 	ans['mean']=np.mean(values)
 	ans['max']=np.max(values)
 	ans['min']=np.min(values)
-	#m=np.mean(values)
-	#s=0
-	#for i in values:
-	#	s+=(i-m)**2
-	#ans['std_dev']=(s/len(values))**(1/2)
-	#s=0
-	#u=dict.fromkeys(np.unique(values),0.0)
-	#for i in values:
-	#	u[i]+=1
-	#for i in values:
-	#	s+=((i-m)**5)*u[i]/len(values)
-	ans['5th_central_moment']=stats.moment(a,moment=5)
+	ans['5th_central_moment']=stats.moment(values,moment=5)
 	return ans
 def sortByLength(inputStr):
         return len(inputStr)
