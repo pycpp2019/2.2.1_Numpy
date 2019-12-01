@@ -3,7 +3,7 @@ from scipy import stats
 def t1_file_stat(filename):
 	values=np.genfromtxt(filename, delimiter="\n")
 	ans={'mean':0,'max':0,'min':0,'std_dev':0,'5th_central_moment':0}
-	ans['mean']=np.mean(values)
+	ans['mean']=np.std(values)
 	ans['max']=np.max(values)
 	ans['min']=np.min(values)
 	ans['5th_central_moment']=stats.moment(values,moment=5)
