@@ -71,7 +71,7 @@ def test_t3_sort_complex():
 
         ordsort = np.sort(data)
         abssort = data[np.argsort(np.abs(data))]
-        rresort = np.flip(np.sort(data))
+        rresort = np.flip(np.sort(data),axis = 0)
         ref = (abssort, rresort)
 
         ret = main.t3_sort_complex(data.copy())
