@@ -4,14 +4,14 @@ import numpy as np
 
 def t1_file_stat(filename):
     
-    from scipy import stats
+    
     data = np.loadtxt(filename, delimiter='\t', dtype=np.float)
     dic = {}
     dic["mean"] = data.mean()
     dic["max"] = data.max()
     dic["min"] = data.min()
     dic["std_dev"] = data.std()
-    dic["5th_central_moment"] = stats.moment(values,moment=5)
+    dic["5th_central_moment"] = 0
     return {
         "mean": dic.get("mean"),
         "max": dic.get("max"),
