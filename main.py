@@ -1,9 +1,10 @@
 import numpy as np
 
-
+!pip install scipy
+from scipy import stats
 
 def t1_file_stat(filename):
-    
+    import numpy as np 
     
     data = np.loadtxt(filename, delimiter='\t', dtype=np.float)
     dic = {}
@@ -11,7 +12,7 @@ def t1_file_stat(filename):
     dic["max"] = data.max()
     dic["min"] = data.min()
     dic["std_dev"] = data.std()
-    dic["5th_central_moment"] = 0
+    dic["5th_central_moment"] = stats.moment(data,moment=5)
     return {
         "mean": dic.get("mean"),
         "max": dic.get("max"),
@@ -19,6 +20,7 @@ def t1_file_stat(filename):
         "std_dev": dic.get("std_dev"),
         "5th_central_moment": dic.get("5th_central_moment")
     }
+
 
 def t2_sort_int(array):
     return  np.sort(array)
