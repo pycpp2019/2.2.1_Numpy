@@ -1,6 +1,6 @@
 import numpy as np
 
-!pip install scipy
+
 from scipy import stats
 
 def t1_file_stat(filename):
