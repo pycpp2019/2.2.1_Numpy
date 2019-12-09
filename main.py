@@ -24,18 +24,17 @@ def t1_file_stat(filename):
 
 def t2_sort_int(array):
     return  np.sort(array)
+    
 
-
+    
 def t3_sort_complex(complex_array):
     if len(complex_array) == 0:
         return (np.array([]),np.array([]))
     tup=np.sort_complex(complex_array)
-    tup.tolist()
-    module_array = ([abs(i) for i in complex_array.tolist()])
-    d=dict(zip(module_array,complex_array))
-    sorted(d.keys())
-    
-    return (np.array(list(d.values())),np.array(tup))
+    module_array = np.array([abs(i) for i in complex_array])
+    x = module_array.argsort()
+    return (tup, complex_array[x])
+
 
 def t4_sort_string_len(string_array):
     return np.array(sorted(string_array.tolist(), key = len))
