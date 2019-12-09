@@ -25,7 +25,10 @@ def t1_file_stat(filename):
 def t2_sort_int(array):
     return  np.sort(array)
 
+
 def t3_sort_complex(complex_array):
+    if len(complex_array) == 0:
+        return (np.array([]),np.array([]))
     tup=np.sort_complex(complex_array)
     tup.tolist()
     module_array = ([abs(i) for i in complex_array.tolist()])
