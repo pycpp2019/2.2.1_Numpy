@@ -35,7 +35,7 @@ def t3_sort_complex(complex_array):
     return (np.array(list(d.values())),np.array(tup))
 
 def t4_sort_string_len(string_array):
-     return sorted(string_array, key = len)
+    return np.array(sorted(string_array.tolist(), key = len))
 
 
 def t5_sort_string_tuple(string_tuple):
