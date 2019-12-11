@@ -1,2 +1,4 @@
 pytest
 numpy
+re 
+scipy
