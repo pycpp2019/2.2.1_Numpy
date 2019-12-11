@@ -1,6 +1,5 @@
 import numpy as np
 import scipy
-import re
 def t1_file_stat(filename):
     data = np.loadtxt(filename, delimiter = '\n', dtype = np.int, usecols = len(re.findall(r"[\n']+", filename))) 
     if data.size <= 2:
